@@ -46,10 +46,11 @@ namespace Punto_de_Venta
                 {
                     con.Close();
                     con.Open();
-                    string consulta;
-                    consulta = ("UPDATE proveedor SET nombrepro = @nombre, direccion = @direccion, rfc = @rfc, telefono = @telefono WHERE idproveedor = @id");
-                    cmd = new SqlCommand(consulta, con);
-                    cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
+                    //string consulta;
+                    //consulta = ("UPDATE proveedor SET nombrepro = @nombre, direccion = @direccion, rfc = @rfc, telefono = @telefono WHERE idproveedor = @id");
+                    cmd = new SqlCommand("actualizarProveedor", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@nombrepro", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text);
                     cmd.Parameters.AddWithValue("@rfc", txtRFC.Text);
                     cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
@@ -72,9 +73,10 @@ namespace Punto_de_Venta
                     {
                         con.Close();
                         con.Open();
-                        string consulta;
-                        consulta = ("DELETE FROM proveedor WHERE idproveedor = @id");
-                        cmd = new SqlCommand(consulta, con);
+                        //string consulta;
+                        //consulta = ("DELETE FROM proveedor WHERE idproveedor = @id");
+                        cmd = new SqlCommand("eliminarProveedor", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id", dgvProveedores.Rows[n].Cells[0].Value);
                         cmd.ExecuteNonQuery();
                         new Conexion().mostrarDatos(con, dgvProveedores, "SELECT * FROM proveedor");
@@ -86,6 +88,24 @@ namespace Punto_de_Venta
                     
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            con.Close();
+            con.Open();
+            //String consulta;
+            //consulta = ("INSERT INTO proveedor (nombrepro, direccion, rfc, telefono) VALUES (@nombrepro, @direccion, @rfc, @telefono)");
+            cmd = new SqlCommand("agregarProveedor", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nombrepro", txtNombre.Text);
+            cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text);
+            cmd.Parameters.AddWithValue("@rfc", txtRFC.Text);
+            cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
+
+            cmd.ExecuteNonQuery();
+            new Conexion().mostrarDatos(con, dgvProveedores, "SELECT * FROM proveedor");
+            MessageBox.Show("El proveedor se ha agreado satisfactoriamente");
         }
     }
 }

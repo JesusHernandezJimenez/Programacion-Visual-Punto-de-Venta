@@ -44,9 +44,10 @@ namespace Punto_de_Venta
                 {
                     con.Close();
                     con.Open();
-                    string consulta;
-                    consulta = ("UPDATE cliente SET nombre = @nombre, direccion = @direccion, telefono = @telefono WHERE idcliente = @id");
-                    cmd = new SqlCommand(consulta, con);
+                    //string consulta;
+                    //consulta = ("UPDATE cliente SET nombre = @nombre, direccion = @direccion, telefono = @telefono WHERE idcliente = @id");
+                    cmd = new SqlCommand("actualizarCliente", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text);
                     cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
@@ -69,9 +70,10 @@ namespace Punto_de_Venta
                     {
                         con.Close();
                         con.Open();
-                        string consulta;
-                        consulta = ("DELETE FROM cliente WHERE idcliente = @id");
-                        cmd = new SqlCommand(consulta, con);
+                        //string consulta;
+                        //consulta = ("DELETE FROM cliente WHERE idcliente = @id");
+                        cmd = new SqlCommand("eliminarCliente", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id", dgvClientes.Rows[n].Cells[0].Value);
                         cmd.ExecuteNonQuery();
                         new Conexion().mostrarDatos(con, dgvClientes, "SELECT * FROM cliente");
@@ -82,6 +84,23 @@ namespace Punto_de_Venta
                     }
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //string consulta;
+            SqlConnection con = new Conexion().crearConexion();
+            con.Close();
+            con.Open();
+            //consulta = ("INSERT INTO cliente (nombre, direccion, telefono) VALUES (@nombre, @direccion, @telefono)");
+            cmd = new SqlCommand("agregarCliente", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
+            cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text);
+            cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
+            cmd.ExecuteNonQuery();
+            new Conexion().mostrarDatos(con, dgvClientes, "SELECT * FROM cliente");
+            MessageBox.Show("El cliente se ha agreado satisfactoriamente");
         }
     }
 }

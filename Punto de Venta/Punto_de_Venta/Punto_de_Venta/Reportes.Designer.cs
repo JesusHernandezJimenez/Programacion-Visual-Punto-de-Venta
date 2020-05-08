@@ -32,6 +32,7 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnProductos
@@ -41,7 +42,7 @@
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnProductos.Location = new System.Drawing.Point(95, 102);
+            this.btnProductos.Location = new System.Drawing.Point(238, 146);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(192, 83);
             this.btnProductos.TabIndex = 4;
@@ -56,7 +57,7 @@
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnUsuarios.Location = new System.Drawing.Point(341, 102);
+            this.btnUsuarios.Location = new System.Drawing.Point(689, 146);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(192, 83);
             this.btnUsuarios.TabIndex = 5;
@@ -71,7 +72,7 @@
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnClientes.Location = new System.Drawing.Point(95, 234);
+            this.btnClientes.Location = new System.Drawing.Point(238, 338);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(192, 83);
             this.btnClientes.TabIndex = 6;
@@ -86,7 +87,7 @@
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnProveedores.Location = new System.Drawing.Point(341, 234);
+            this.btnProveedores.Location = new System.Drawing.Point(689, 338);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(192, 83);
             this.btnProveedores.TabIndex = 7;
@@ -94,12 +95,24 @@
             this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(500, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 39);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Reportes";
+            // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(119)))), ((int)(((byte)(161)))));
-            this.ClientSize = new System.Drawing.Size(636, 422);
+            this.ClientSize = new System.Drawing.Size(1154, 575);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnUsuarios);
@@ -108,6 +121,7 @@
             this.Text = "Reportes";
             this.Load += new System.EventHandler(this.Reportes_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,5 +131,6 @@
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Label label1;
     }
 }

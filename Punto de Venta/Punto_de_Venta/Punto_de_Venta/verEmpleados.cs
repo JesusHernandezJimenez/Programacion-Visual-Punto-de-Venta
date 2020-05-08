@@ -63,9 +63,10 @@ namespace Punto_de_Venta
                 {
                     con.Close();
                     con.Open();
-                    string consulta;
-                    consulta = ("UPDATE empleado SET nombre = @nombre, direccion = @direccion, telefono = @telefono, usuario = @usuario, contrasenia = @contrasenia, sexo = @sexo, fecha_nacimiento = @fecha, cargo = @cargo WHERE idempleado = @id");
-                    cmd = new SqlCommand(consulta, con);
+                    //string consulta;
+                    //consulta = ("UPDATE empleado SET nombre = @nombre, direccion = @direccion, telefono = @telefono, usuario = @usuario, contrasenia = @contrasenia, sexo = @sexo, fecha_nacimiento = @fecha, cargo = @cargo WHERE idempleado = @id"); 
+                    cmd = new SqlCommand("actualizarEmpleado", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text);
                     cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
@@ -99,9 +100,10 @@ namespace Punto_de_Venta
                     {
                         con.Close();
                         con.Open();
-                        string consulta;
-                        consulta = ("DELETE FROM empleado WHERE idempleado = @id");
-                        cmd = new SqlCommand(consulta, con);
+                        //string consulta;
+                        //consulta = ("DELETE FROM empleado WHERE idempleado = @id");
+                        cmd = new SqlCommand("eliminarEmpleado", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id", dgvEmpleados.Rows[n].Cells[0].Value);
                         cmd.ExecuteNonQuery();
                         new Conexion().mostrarDatos(con, dgvEmpleados, "SELECT idempleado, nombre, direccion, telefono, usuario, contrasenia, sexo, fecha_nacimiento, cargo from empleado");
@@ -112,6 +114,38 @@ namespace Punto_de_Venta
                     }
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            char sexo = ' ';
+            if (this.rbHombre.Checked == true)
+            {
+                sexo = 'H';
+            }
+            else if (this.rbMujer.Checked == true)
+            {
+                sexo = 'H';
+            }
+            //string consulta;
+            SqlConnection con = new Conexion().crearConexion();
+            con.Close();
+            con.Open();
+            //consulta = ("INSERT INTO empleado (nombre, direccion, telefono, usuario, contrasenia, sexo, fecha_nacimiento, cargo) VALUES (@nombre, @direccion, @telefono, @usuario, @contrasenia, @sexo, @fecha_nacimiento, @cargo)");
+            cmd = new SqlCommand("agregarEmpleado", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
+            cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text);
+            cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
+            cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+            cmd.Parameters.AddWithValue("@contrasenia", txtContrasena.Text);
+            cmd.Parameters.AddWithValue("@sexo", sexo);
+            cmd.Parameters.AddWithValue("@fecha_nacimiento", dtFecha.Text);
+            cmd.Parameters.AddWithValue("@cargo", txtCargo.Text);
+            cmd.ExecuteNonQuery();
+            new Conexion().mostrarDatos(con, dgvEmpleados, "SELECT idempleado, nombre, direccion, telefono, usuario, contrasenia, sexo, fecha_nacimiento, cargo from empleado");
+            MessageBox.Show("El empleado se ha agreado satisfactoriamente");
+
         }
     }
 }

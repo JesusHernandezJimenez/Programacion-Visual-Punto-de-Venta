@@ -33,16 +33,12 @@ C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Pu
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\bin\Debug\Punto_de_Venta.exe
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\bin\Debug\Punto_de_Venta.pdb
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Almacen.resources
-C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Cliente.resources
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Compras.resources
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.DetCompras.resources
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.DetVentas.resources
-C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Empleado.resources
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Login.resources
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Menu.resources
-C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Productos.resources
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Properties.Resources.resources
-C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Proveedor.resources
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.Ventas.resources
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.csproj.GenerateResource.cache
 C:\Users\LocalHost\Desktop\Programación Visual\Punto de Venta\Punto_de_Venta\Punto_de_Venta\obj\Debug\Punto_de_Venta.csproj.CoreCompileInputs.cache
